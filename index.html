@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Malshi ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    overflow-x:hidden;
+    color:#fff;
+    font-family:Georgia,"Times New Roman",serif;
+
+    background:
+        radial-gradient(circle at 15% 20%,rgba(255,100,150,.18),transparent 30%),
+        radial-gradient(circle at 85% 25%,rgba(190,30,90,.20),transparent 35%),
+        radial-gradient(circle at 50% 100%,rgba(255,170,200,.10),transparent 40%),
+        linear-gradient(135deg,#16040c,#380b1e 48%,#100208);
+
+    position:relative;
+}
+
+/* Dreamy overlay */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-10;
+
+    background:
+        linear-gradient(
+            rgba(15,0,8,.25),
+            rgba(15,0,8,.68)
+        );
+
+    pointer-events:none;
+}
+
+/* Moon */
+.moon{
+    position:fixed;
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    right:8%;
+    top:6%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #fff,
+            #ffe8ef 45%,
+            #f5c4d3 70%,
+            #e9a9bf 100%
+        );
+
+    box-shadow:
+        0 0 35px rgba(255,225,235,.6),
+        0 0 100px rgba(255,150,190,.25);
+
+    opacity:.75;
+    z-index:-8;
+}
+
+.moon::after{
+    content:"";
+    position:absolute;
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    left:-45px;
+    top:-18px;
+    background:#19050d;
+}
+
+/* Stars */
+.stars{
+    position:fixed;
+    inset:0;
+    z-index:-7;
+    pointer-events:none;
+}
+
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    border-radius:50%;
+    background:#fff;
+    opacity:.6;
+    animation:twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+    0%,100%{
+        opacity:.2;
+        transform:scale(.7);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.4);
+    }
+}
+
+/* Falling petals */
+.petal{
+    position:fixed;
+    top:-40px;
+    z-index:5;
+    pointer-events:none;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    0%{
+        transform:
+            translateY(-40px)
+            rotate(0deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:.8;
+    }
+
+    100%{
+        transform:
+            translateY(110vh)
+            translateX(120px)
+            rotate(500deg);
+        opacity:0;
+    }
+}
+
+/* Main */
+.container{
+    min-height:100vh;
+    width:100%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:25px 16px;
+}
+
+/* Pages */
+.page{
+    display:none;
+    width:100%;
+    max-width:650px;
+    text-align:center;
+
+    animation:pageIn .7s ease;
+}
+
+.page.active{
+    display:block;
+}
+
+@keyframes pageIn{
+    from{
+        opacity:0;
+        transform:
+            translateY(25px)
+            scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+/* Glass card */
+.card{
+    position:relative;
+
+    padding:42px 28px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.13),
+            rgba(255,255,255,.045)
+        );
+
+    border:1px solid rgba(255,190,210,.22);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.5),
+        inset 0 1px 1px rgba(255,255,255,.12),
+        0 0 35px rgba(255,80,140,.08);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    inset:-1px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,180,205,.18),
+            transparent 35%,
+            transparent 65%,
+            rgba(255,100,160,.12)
+        );
+
+    pointer-events:none;
+}
+
+/* Text */
+h1{
+    font-size:clamp(34px,7vw,55px);
+    line-height:1.1;
+    margin-bottom:18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ffd3df,
+            #fff
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+h2{
+    font-size:clamp(26px,5vw,38px);
+    color:#ffe1e9;
+    margin-bottom:15px;
+}
+
+.subtitle{
+    color:#eecbd4;
+    font-size:17px;
+    line-height:1.7;
+    margin-bottom:28px;
+}
+
+.small-text{
+    color:#d9aebc;
+    font-size:14px;
+    margin-top:18px;
+}
+
+/* Heart */
+.big-heart{
+    font-size:65px;
+    margin-bottom:15px;
+
+    animation:heartBeat 1.7s infinite;
+
+    filter:
+        drop-shadow(
+            0 0 18px rgba(255,70,130,.55)
+        );
+}
+
+@keyframes heartBeat{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    15%{
+        transform:scale(1.15);
+    }
+
+    30%{
+        transform:scale(1);
+    }
+
+    45%{
+        transform:scale(1.1);
+    }
+}
+
+/* Buttons */
+.buttons{
+    display:flex;
+    flex-direction:column;
+    gap:13px;
+    margin-top:25px;
+}
+
+button{
+    width:100%;
+
+    border:none;
+    outline:none;
+    cursor:pointer;
+
+    padding:16px 20px;
+
+    border-radius:50px;
+
+    font-size:16px;
+    font-family:inherit;
+    font-weight:bold;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9d174d,
+            #be3568
+        );
+
+    box-shadow:
+        0 8px 25px rgba(150,20,70,.28),
+        inset 0 1px rgba(255,255,255,.15);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+button:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 32px rgba(255,50,120,.35),
+        0 0 20px rgba(255,130,170,.12);
+}
+
+button:active{
+    transform:scale(.97);
+}
+
+button.secondary{
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.10),
+            rgba(255,255,255,.05)
+        );
+
+    border:1px solid rgba(255,190,210,.20);
+
+    color:#f9dce5;
+}
+
+/* No message */
+.no-message{
+    min-height:25px;
+    margin-top:20px;
+
+    color:#ffb7ca;
+
+    font-size:15px;
+    line-height:1.6;
+}
+
+/* Photos */
+.memory-counter{
+    color:#ffabc1;
+    font-size:13px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.memory-photo{
+    width:100%;
+    max-height:520px;
+    height:auto;
+
+    display:block;
+
+    object-fit:contain;
+
+    margin:15px auto 25px;
+
+    padding:6px;
+
+    border-radius:22px;
+
+    background:rgba(0,0,0,.25);
+
+    border:1px solid rgba(255,190,210,.25);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.45),
+        0 0 30px rgba(255,70,130,.10);
+}
+
+/* Question */
+.progress{
+    width:100%;
+    height:5px;
+
+    background:rgba(255,255,255,.10);
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    margin-bottom:28px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #e85d8c,
+            #ffc0d2
+        );
+
+    transition:width .5s ease;
+}
+
+.question-number{
+    color:#ff9fba;
+    font-size:14px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.question{
+    font-size:24px;
+    line-height:1.45;
+
+    color:#ffe8ee;
+
+    margin-bottom:22px;
+}
+
+/* Final */
+.final-card{
+    padding:45px 25px;
+}
+
+.final-glow{
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    border-radius:50%;
+
+    background:rgba(255,60,130,.10);
+
+    filter:blur(60px);
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    z-index:-1;
+}
+
+.final-name{
+    font-size:35px;
+    color:#ffc1d3;
+    margin:20px 0;
+}
+
+.final-message{
+    font-size:20px;
+    line-height:1.8;
+    color:#f8dfe6;
+    margin:20px 0;
+}
+
+/* Teddy */
+.teddy-area{
+    height:150px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:5px;
+
+    margin-top:20px;
+}
+
+.teddy{
+    font-size:75px;
+
+    animation:
+        teddyHug
+        2.5s
+        infinite
+        ease-in-out;
+}
+
+@keyframes teddyHug{
+
+    0%,100%{
+        transform:
+            translateX(0)
+            rotate(0deg);
+    }
+
+    45%,55%{
+        transform:
+            translateX(12px)
+            rotate(4deg);
+    }
+}
+
+/* Floating hearts */
+.floating-heart{
+    position:fixed;
+    bottom:-40px;
+
+    z-index:10;
+
+    pointer-events:none;
+
+    animation:
+        heartFloat
+        5s
+        linear
+        forwards;
+
+    filter:
+        drop-shadow(
+            0 0 8px rgba(255,100,150,.6)
+        );
+}
+
+@keyframes heartFloat{
+
+    0%{
+        transform:
+            translateY(0)
+            scale(.7)
+            rotate(0deg);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:.8;
+    }
+
+    100%{
+        transform:
+            translateY(-110vh)
+            translateX(var(--drift))
+            scale(1.3)
+            rotate(30deg);
+
+        opacity:0;
+    }
+}
+
+/* Mobile */
+@media(max-width:500px){
+
+    .container{
+        padding:15px;
+    }
+
+    .card{
+        padding:32px 20px;
+        border-radius:25px;
+    }
+
+    .moon{
+        width:100px;
+        height:100px;
+        right:5%;
+    }
+
+    .moon::after{
+        width:100px;
+        height:100px;
+        left:-28px;
+        top:-10px;
+    }
+
+    .question{
+        font-size:21px;
+    }
+
+    .final-message{
+        font-size:17px;
+    }
+
+    .teddy{
+        font-size:60px;
+    }
+
+    .memory-photo{
+        max-height:480px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="moon"></div>
+<div class="stars" id="stars"></div>
+
+<div class="container">
+
+
+<!-- ==================================================
+     START
+================================================== -->
+
+<section class="page active" id="startPage">
+
+<div class="card">
+
+<div class="big-heart">❤️</div>
+
+<h1>Hey Malshi...</h1>
+
+<p class="subtitle">
+I made something for you.<br>
+But before you see everything...
+I need one little answer. 🥹
+</p>
+
+<div class="buttons">
+
+<button onclick="showPage('voice1Page')">
+YES... SHOW ME ❤️
+</button>
+
+<button
+class="secondary"
+onclick="startNoMessage()">
+WHAT DID YOU DO NOW? 😭
+</button>
+
+</div>
+
+<div class="no-message" id="startNo"></div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     VOICE 1
+================================================== -->
+
+<section class="page" id="voice1Page">
+
+<div class="card">
+
+<div class="big-heart">🎙️❤️</div>
+
+<h2>Before We Continue...</h2>
+
+<p class="subtitle">
+There's something I recorded just for you.<br>
+Don't skip this one. 🥺
+</p>
+
+<div class="buttons">
+
+<button onclick="acceptVoice(1)">
+YES, I'LL LISTEN ❤️
+</button>
+
+<button
+class="secondary"
+onclick="rejectVoice(1)">
+NO...
+</button>
+
+</div>
+
+<div class="no-message" id="voice1No"></div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     PHOTO 1
+================================================== -->
+
+<section class="page" id="memory1">
+
+<div class="card">
+
+<div class="memory-counter">
+MEMORY 1 OF 3
+</div>
+
+<div class="big-heart">📸❤️</div>
+
+<h2>One Little Memory...</h2>
+
+<img
+src="photo1.jpg"
+class="memory-photo"
+alt="Memory 1">
+
+<p class="subtitle">
+Some moments become special
+simply because of who we shared them with.
+</p>
+
+<div class="buttons">
+
+<button onclick="showPage('memory2')">
+SHOW ME ANOTHER MEMORY ❤️
+</button>
+
+<button
+class="secondary"
+onclick="showPage('memory2')">
+TELL ME SOMETHING INSTEAD
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     PHOTO 2
+================================================== -->
+
+<section class="page" id="memory2">
+
+<div class="card">
+
+<div class="memory-counter">
+MEMORY 2 OF 3
+</div>
+
+<div class="big-heart">🥹❤️</div>
+
+<h2>Another Little Memory...</h2>
+
+<img
+src="photo2.jpg"
+class="memory-photo"
+alt="Memory 2">
+
+<p class="subtitle">
+And somehow...
+every memory with you feels a little different.
+</p>
+
+<div class="buttons">
+
+<button onclick="showPage('memory3')">
+ONE MORE ❤️
+</button>
+
+<button
+class="secondary"
+onclick="showPage('memory3')">
+THAT'S ENOUGH, CONTINUE
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     PHOTO 3
+================================================== -->
+
+<section class="page" id="memory3">
+
+<div class="card">
+
+<div class="memory-counter">
+MEMORY 3 OF 3
+</div>
+
+<div class="big-heart">🌹❤️</div>
+
+<h2>And Finally... This One</h2>
+
+<img
+src="photo3.jpg"
+class="memory-photo"
+alt="Memory 3">
+
+<p class="subtitle">
+Three memories...
+and somehow, I still have so much more
+I want to tell you.
+</p>
+
+<div class="buttons">
+
+<button onclick="showPage('voice2Page')">
+KEEP GOING ❤️
+</button>
+
+<button
+class="secondary"
+onclick="showPage('voice2Page')">
+I'M READY FOR THE NEXT PART 🥹
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     VOICE 2
+================================================== -->
+
+<section class="page" id="voice2Page">
+
+<div class="card">
+
+<div class="big-heart">🥺❤️</div>
+
+<h2>If You Miss Me...</h2>
+
+<p class="subtitle">
+Maybe this part will tell you
+something I've been wanting to say.
+</p>
+
+<div class="buttons">
+
+<button onclick="acceptVoice(2)">
+YES, PLAY IT ❤️
+</button>
+
+<button
+class="secondary"
+onclick="rejectVoice(2)">
+NO...
+</button>
+
+</div>
+
+<div class="no-message" id="voice2No"></div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     5 QUESTIONS
+================================================== -->
+
+<section class="page" id="questionPage">
+
+<div class="card">
+
+<div class="progress">
+
+<div
+class="progress-bar"
+id="progressBar">
+</div>
+
+</div>
+
+<div
+class="question-number"
+id="questionNumber">
+QUESTION 1 OF 5
+</div>
+
+<div class="big-heart">❤️</div>
+
+<div
+class="question"
+id="questionText">
+</div>
+
+<div class="buttons">
+
+<button
+id="option1"
+onclick="answerQuestion(true)">
+</button>
+
+<button
+class="secondary"
+id="option2"
+onclick="answerQuestion(false)">
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     VOICE 3
+================================================== -->
+
+<section class="page" id="voice3Page">
+
+<div class="card">
+
+<div class="big-heart">💌</div>
+
+<h2>One More Thing...</h2>
+
+<p class="subtitle">
+You've come this far...
+so I have one more little thing for you.
+</p>
+
+<div class="buttons">
+
+<button onclick="acceptVoice(3)">
+YES, TELL ME ❤️
+</button>
+
+<button
+class="secondary"
+onclick="rejectVoice(3)">
+NO...
+</button>
+
+</div>
+
+<div class="no-message" id="voice3No"></div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     VOICE 4
+================================================== -->
+
+<section class="page" id="voice4Page">
+
+<div class="card">
+
+<div class="big-heart">💋❤️</div>
+
+<h2>The Romantic One...</h2>
+
+<p class="subtitle">
+Okay Malshi...
+this one is probably the most important. 🥹
+</p>
+
+<div class="buttons">
+
+<button onclick="acceptVoice(4)">
+YES... I'LL LISTEN ❤️
+</button>
+
+<button
+class="secondary"
+onclick="rejectVoice(4)">
+NO...
+</button>
+
+</div>
+
+<div class="no-message" id="voice4No"></div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     FINAL CHOICE
+================================================== -->
+
+<section class="page" id="finalChoice">
+
+<div class="card">
+
+<div class="big-heart">🎁❤️</div>
+
+<h2>You Made It...</h2>
+
+<p class="subtitle">
+There's only one thing left now.<br>
+Are you ready to see what I made for you?
+</p>
+
+<div class="buttons">
+
+<button onclick="finalReveal()">
+SHOW ME WHAT YOU MADE ❤️
+</button>
+
+<button
+class="secondary"
+onclick="finalReveal()">
+OKAY... SURPRISE ME 🥹
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     FINAL PAGE
+================================================== -->
+
+<section class="page" id="finalPage">
+
+<div class="card final-card">
+
+<div class="final-glow"></div>
+
+<div class="big-heart">❤️</div>
+
+<h1>For You, Malshi</h1>
+
+<div class="final-name">
+My Malshi ❤️
+</div>
+
+<p class="final-message">
+
+If I could give you one thing,
+it would be the ability to see yourself
+through my eyes.
+
+<br><br>
+
+Maybe then you'd understand
+just how special you are to me.
+
+<br><br>
+
+You're not just a memory,
+not just a moment,
+and definitely not just another person.
+
+<br><br>
+
+You became someone
+my heart doesn't know how to forget. ❤️
+
+<br><br>
+
+No matter how many pages this little
+surprise has...
+
+<br>
+
+<strong>
+you're still my favorite part of the story.
+</strong>
+
+</p>
+
+<div class="teddy-area">
+
+<div class="teddy">
+🧸
+</div>
+
+<div style="font-size:30px;">
+❤️
+</div>
+
+<div class="teddy">
+🧸
+</div>
+
+</div>
+
+<p class="small-text">
+Made with a little love...
+and a lot of feelings. ❤️
+</p>
+
+<div class="buttons">
+
+<button onclick="location.reload()">
+START AGAIN ❤️
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+<script>
+
+/* ==================================================
+   AUDIO
+================================================== */
+
+const voiceFiles = {
+    1:"voice1.mp3",
+    2:"voice2.mp3",
+    3:"voice3.mp3",
+    4:"voice4.mp3"
+};
+
+const backgroundMusic =
+    new Audio("vere-enna-venam.mp3");
+
+backgroundMusic.loop = true;
+backgroundMusic.volume = 0.8;
+
+let currentVoice = null;
+
+
+/* ==================================================
+   PAGE SYSTEM
+================================================== */
+
+function showPage(pageId){
+
+    document
+        .querySelectorAll(".page")
+        .forEach(page => {
+            page.classList.remove("active");
+        });
+
+    const page =
+        document.getElementById(pageId);
+
+    if(page){
+        page.classList.add("active");
+    }
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+
+/* ==================================================
+   VOICE
+================================================== */
+
+function acceptVoice(number){
+
+    if(currentVoice){
+
+        currentVoice.pause();
+        currentVoice.currentTime = 0;
+        currentVoice = null;
+
+    }
+
+    backgroundMusic.pause();
+
+    currentVoice =
+        new Audio(voiceFiles[number]);
+
+    currentVoice.volume = 1;
+
+    currentVoice
+        .play()
+        .catch(() => {});
+
+    currentVoice.onended = function(){
+
+        currentVoice = null;
+
+        nextAfterVoice(number);
+
+    };
+}
+
+
+/* ==================================================
+   AFTER VOICE
+================================================== */
+
+function nextAfterVoice(number){
+
+    if(number === 1){
+
+        showPage("memory1");
+
+    }
+
+    else if(number === 2){
+
+        currentQuestion = 0;
+
+        showQuestion();
+
+    }
+
+    else if(number === 3){
+
+        showPage("voice4Page");
+
+    }
+
+    else if(number === 4){
+
+        showPage("finalChoice");
+
+    }
+}
+
+
+/* ==================================================
+   NO BUTTONS
+================================================== */
+
+const noMessages = {
+
+    1:
+    "Are you sure? 🥺❤️ I actually recorded this just for you... You can't say no that easily. 😭",
+
+    2:
+    "Okay... but listen 😭❤️ You came all the way here, and now you're going to leave without hearing what I wanted to tell you? Just give me one little chance... 🥺",
+
+    3:
+    "Malshi 😭😂 You're really making me work for this, huh? Fine... I'll wait. 😌❤️ But I'm not giving you the next part until you say YES. 😂",
+
+    4:
+    "Nooo... 🥺❤️ You've come this far. Please listen to this one. I promise it's worth it."
+
+};
+
+
+function rejectVoice(number){
+
+    const element =
+        document.getElementById(
+            "voice" + number + "No"
+        );
+
+    if(element){
+
+        element.innerText =
+            noMessages[number];
+
+        element.style.animation = "none";
+
+        void element.offsetWidth;
+
+        element.style.animation =
+            "messageIn .4s ease";
+
+    }
+
+    /*
+       NO:
+       - does not play audio
+       - does not advance
+       - stays on same page
+    */
+}
+
+
+/* ==================================================
+   START NO
+================================================== */
+
+function startNoMessage(){
+
+    document
+        .getElementById("startNo")
+        .innerText =
+        "Nothing bad 😭❤️ I just made something special for you. Now stop being suspicious and press YES. 🥺";
+
+}
+
+
+/* ==================================================
+   EXACTLY 5 QUESTIONS
+================================================== */
+
+const questions = [
+
+    {
+        q:"What do you think I value most in a relationship?",
+        a:"Love, trust, and understanding ❤️",
+        b:"Simply being together 🤍"
+    },
+
+    {
+        q:"What do you think makes me feel most loved by you?",
+        a:"Your time and attention ❤️",
+        b:"Hearing you tell me you care 🥹"
+    },
+
+    {
+        q:"When I'm quiet, what do you think I need from you?",
+        a:"Someone who understands me without forcing me to speak 🤍",
+        b:"Reassurance that you're still there ❤️"
+    },
+
+    {
+        q:"What do you think I secretly wish for in our future?",
+        a:"More beautiful moments together ❤️",
+        b:"A future where we never lose each other 🥹"
+    },
+
+    {
+        q:"Do you know how deeply I care about you?",
+        a:"Yes... I can feel it. ❤️",
+        b:"Maybe not completely... but I want to. 🥹"
+    }
+
+];
+
+let currentQuestion = 0;
+
+
+/* ==================================================
+   SHOW QUESTION
+================================================== */
+
+function showQuestion(){
+
+    showPage("questionPage");
+
+    const data =
+        questions[currentQuestion];
+
+    document
+        .getElementById("questionNumber")
+        .innerText =
+        "QUESTION " +
+        (currentQuestion + 1) +
+        " OF " +
+        questions.length;
+
+    document
+        .getElementById("questionText")
+        .innerText =
+        data.q;
+
+    document
+        .getElementById("option1")
+        .innerText =
+        data.a;
+
+    document
+        .getElementById("option2")
+        .innerText =
+        data.b;
+
+    const progress =
+        ((currentQuestion + 1) /
+        questions.length) * 100;
+
+    document
+        .getElementById("progressBar")
+        .style.width =
+        progress + "%";
+}
+
+
+/* ==================================================
+   ANSWER QUESTION
+================================================== */
+
+function answerQuestion(firstChoice){
+
+    const button =
+        firstChoice
+        ? document.getElementById("option1")
+        : document.getElementById("option2");
+
+    button.innerText =
+        "❤️ I knew you'd understand...";
+
+    setTimeout(() => {
+
+        currentQuestion++;
+
+        if(
+            currentQuestion >=
+            questions.length
+        ){
+
+            showPage("voice3Page");
+
+        }
+
+        else{
+
+            showQuestion();
+
+        }
+
+    },1500);
+}
+
+
+/* ==================================================
+   FINAL REVEAL
+================================================== */
+
+function finalReveal(){
+
+    if(currentVoice){
+
+        currentVoice.pause();
+        currentVoice.currentTime = 0;
+        currentVoice = null;
+
+    }
+
+    showPage("finalPage");
+
+    backgroundMusic.pause();
+
+    backgroundMusic.currentTime = 0;
+
+    backgroundMusic.volume = 0.8;
+
+    backgroundMusic
+        .play()
+        .catch(() => {
+
+            /*
+              Browser autoplay fallback.
+            */
+
+            const startMusicOnce = () => {
+
+                backgroundMusic
+                    .play()
+                    .catch(() => {});
+
+                document.removeEventListener(
+                    "click",
+                    startMusicOnce
+                );
+
+                document.removeEventListener(
+                    "touchstart",
+                    startMusicOnce
+                );
+
+            };
+
+            document.addEventListener(
+                "click",
+                startMusicOnce,
+                {once:true}
+            );
+
+            document.addEventListener(
+                "touchstart",
+                startMusicOnce,
+                {once:true}
+            );
+
+        });
+
+    createHeartRain();
+
+    createPetals();
+}
+
+
+/* ==================================================
+   HEART RAIN
+================================================== */
+
+function createHeartRain(){
+
+    const hearts = [
+        "❤️",
+        "💗",
+        "💕",
+        "💖",
+        "💘",
+        "💞"
+    ];
+
+    for(let i=0;i<35;i++){
+
+        setTimeout(() => {
+
+            const heart =
+                document.createElement("div");
+
+            heart.className =
+                "floating-heart";
+
+            heart.innerText =
+                hearts[
+                    Math.floor(
+                        Math.random() *
+                        hearts.length
+                    )
+                ];
+
+            heart.style.left =
+                Math.random()*100 + "%";
+
+            heart.style.fontSize =
+                (12 + Math.random()*25) + "px";
+
+            heart.style.animationDuration =
+                (4 + Math.random()*4) + "s";
+
+            heart.style.setProperty(
+                "--drift",
+                (-100 + Math.random()*200) + "px"
+            );
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            },9000);
+
+        },i*180);
+
+    }
+}
+
+
+/* ==================================================
+   PETALS
+================================================== */
+
+function createPetals(){
+
+    const petals = [
+        "🌹",
+        "🌸",
+        "💕",
+        "❤️"
+    ];
+
+    for(let i=0;i<25;i++){
+
+        setTimeout(() => {
+
+            const petal =
+                document.createElement("div");
+
+            petal.className =
+                "petal";
+
+            petal.innerText =
+                petals[
+                    Math.floor(
+                        Math.random() *
+                        petals.length
+                    )
+                ];
+
+            petal.style.left =
+                Math.random()*100 + "%";
+
+            petal.style.fontSize =
+                (12 + Math.random()*15) + "px";
+
+            petal.style.animationDuration =
+                (5 + Math.random()*5) + "s";
+
+            document.body.appendChild(petal);
+
+            setTimeout(() => {
+                petal.remove();
+            },11000);
+
+        },i*300);
+
+    }
+}
+
+
+/* ==================================================
+   STARS
+================================================== */
+
+function createStars(){
+
+    const container =
+        document.getElementById("stars");
+
+    for(let i=0;i<70;i++){
+
+        const star =
+            document.createElement("div");
+
+        star.className =
+            "star";
+
+        star.style.left =
+            Math.random()*100 + "%";
+
+        star.style.top =
+            Math.random()*100 + "%";
+
+        star.style.animationDelay =
+            Math.random()*3 + "s";
+
+        star.style.animationDuration =
+            (2 + Math.random()*4) + "s";
+
+        container.appendChild(star);
+
+    }
+}
+
+
+/* ==================================================
+   AMBIENT PETALS
+================================================== */
+
+function ambientPetals(){
+
+    setInterval(() => {
+
+        const finalPage =
+            document.getElementById("finalPage");
+
+        if(
+            finalPage &&
+            finalPage.classList.contains("active")
+        ){
+            return;
+        }
+
+        const petal =
+            document.createElement("div");
+
+        petal.className =
+            "petal";
+
+        petal.innerText =
+            Math.random() > .5
+            ? "🌹"
+            : "🌸";
+
+        petal.style.left =
+            Math.random()*100 + "%";
+
+        petal.style.fontSize =
+            (12 + Math.random()*12) + "px";
+
+        petal.style.animationDuration =
+            (8 + Math.random()*6) + "s";
+
+        document.body.appendChild(petal);
+
+        setTimeout(() => {
+            petal.remove();
+        },15000);
+
+    },1800);
+}
+
+
+/* ==================================================
+   START EFFECTS
+================================================== */
+
+createStars();
+
+ambientPetals();
+
+</script>
+
+</body>
+</html>
